@@ -245,7 +245,7 @@ Envelope:
 
 ## License
 
-Private / proprietary unless otherwise stated by the repository owner.
+Released under the [MIT License](LICENSE).
 
 ---
 
