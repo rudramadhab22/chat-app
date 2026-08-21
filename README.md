@@ -84,19 +84,27 @@ com.rudra.ed
 
 - **JDK 21+**
 - **MySQL** running locally
-- User with create-database rights (defaults below)
 
-### Configure
+### Configure secrets (env / `.env`)
 
-[`src/main/resources/application.properties`](src/main/resources/application.properties)
+Sensitive values are **not** stored in `application.properties`.  
+Copy the example file and edit:
 
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/chat_app_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-spring.datasource.username=rudra
-spring.datasource.password=rudra123
+```bash
+cp .env.example .env
 ```
 
-> Change `app.jwt.secret` and DB credentials before any shared or production deploy.
+Required keys in `.env` (or OS environment):
+
+| Variable | Purpose |
+|----------|---------|
+| `DB_URL` | JDBC URL |
+| `DB_USERNAME` | MySQL user |
+| `DB_PASSWORD` | MySQL password |
+| `JWT_SECRET` | JWT signing key (≥ 32 chars) |
+| `SERVER_PORT` | HTTP port (default `8080`) |
+
+`.env` is gitignored. Real OS env vars always override `.env`.
 
 ### Run
 
