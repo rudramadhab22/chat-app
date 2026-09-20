@@ -1,4 +1,4 @@
-# Chat App Backend 
+# Chat App Backend  
 
 <p align="center">
   <strong>Enterprise WhatsApp-style messaging API</strong><br/>
